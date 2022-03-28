@@ -10,7 +10,7 @@
 const BLACKLISTED_KEY_CODES = [38];
 const COMMANDS = {
   help:
-    'Supported commands: <span class="code">about</span>, <span class="code">experience</span>, <span class="code">education</span>, <span class="code">skills</span>, <span class="code">contact</span>',
+    'Supported commands:<br> <span class="code">about</span>, <span class="code">experience</span>, <span class="code">education</span>, <span class="code">skills</span>, <span class="code">contact</span>, <span class="code">clear</span>',
   about:
     "Danila Kravchenko -- <span class=\"code\">CS student</span>",
   skills:
@@ -20,7 +20,9 @@ const COMMANDS = {
   resume: "<a href='./resume.pdf' class='success link'>resume.pdf</a>",
   experience: "6 months --> Irkutsk Aviation Technical Shcool --> SysAdmin.",
   contact:
-    "You can contact me on any of following links:<br><a href='https://www.t.me/kravchadev' class='success link'>Telegram</a>"
+    "You can contact me on any of following links:<br><a href='https://www.t.me/kravchadev' class='success link'>Telegram</a>",
+  clear:
+    "<br> <br> <br> <br> <br> <br> <br> <br> <br> <br>"
 };
 let userInput, terminalOutput;
 
