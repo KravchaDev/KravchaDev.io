@@ -1,0 +1,1 @@
+var jshover=function(){var e=document.getElementById("horizontal-multilevel-menu");if(e)for(var o=e.getElementsByTagName("li"),t=0;t<o.length;t++)o[t].onmouseover=function(){this.className+=" jshover"},o[t].onmouseout=function(){this.className=this.className.replace(new RegExp(" jshover\\b"),"")}};window.attachEvent&&window.attachEvent("onload",jshover);

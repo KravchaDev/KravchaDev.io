@@ -1,0 +1,716 @@
+/**
+  __
+ / _|
+| |_ _ __ ___  _ __ ___     ___  _ __   ___ _ __ ______ ___  ___  _   _ _ __ ___ ___
+|  _| '__/ _ \| '_ ` _ \   / _ \| '_ \ / _ \ '_ \______/ __|/ _ \| | | | '__/ __/ _ \
+| | | | | (_) | | | | | | | (_) | |_) |  __/ | | |     \__ \ (_) | |_| | | | (_|  __/
+|_| |_|  \___/|_| |_| |_|  \___/| .__/ \___|_| |_|     |___/\___/ \__,_|_|  \___\___|
+                                | |
+                                |_|
+ mit, gnu, gpl licenses
+ **/
+
+html {
+  min-height: 100vh;
+}
+
+html.is-hidden {
+  overflow: hidden;
+}
+
+body {
+  background: #0E1D2D;
+  font-family: 'Inter', Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #fff;
+  opacity: 1;
+  min-height: 100vh;
+}
+
+.global-wrapper {
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100vh;
+  background: url(../images/top-bg.png) no-repeat right top;
+}
+
+ol, ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+input {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  select:focus, textarea:focus, input:focus {
+    -webkit-appearance: none;
+  }
+  select:active, input:active, textarea:active {
+    -webkit-appearance: none;
+  }
+  input, textarea, select {
+    -webkit-appearance: none;
+  }
+  select:focus, textarea:focus, input:focus {
+    font-size: 16px;
+  }
+  select:active, input:active, textarea:active {
+    font-size: 16px;
+  }
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:not([class]) {
+  color: #FFE664;
+  border-bottom: 1px solid #FFE664;
+  transition: border-bottom-color .3s;
+}
+
+a:not([class]):hover {
+  border-bottom-color: transparent;
+}
+
+::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+body a:hover, body a:active, body a:focus {
+  text-decoration: none;
+  outline: 0;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+button {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: transparent !important;
+}
+
+html input[type="button"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input[type="hidden"] {
+  display: none;
+}
+
+button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+ul:not([class]) {
+  margin: 0 0 1em;
+  list-style-type: disc;
+  padding-left: 15px;
+}
+
+ul:not([class]) li {
+  margin-bottom: .7em;
+}
+
+ul:not([class]) li:last-child {
+  margin-bottom: 0;
+}
+
+ol:not([class]) {
+  margin: 0 0 1em;
+  padding-left: 15px;
+  list-style-type: decimal;
+}
+
+ol:not([class]) li {
+  margin-bottom: .7em;
+}
+
+ol:not([class]) li:last-child {
+  margin-bottom: 0;
+}
+
+.main-btn {
+  display: inline-block;
+  min-width: 200px;
+  height: 88px;
+  font-size: 1.625rem;
+  line-height: 88px;
+  background-color: #161D23;
+  border-radius: 56px;
+  font-weight: 700;
+  padding: 0 1em;
+  color: #fff;
+  text-align: center;
+  transition: background-color .3s;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.main-btn:hover {
+  background-color: #020304;
+}
+
+.main-btn:active {
+  box-shadow: inset 1px 2px black;
+  border-top: 1px solid black;
+}
+
+h1, .main-title {
+  font-size: 5.125rem;
+  font-weight: 400;
+  font-family: 'Dela Gothic One';
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2, .section-title {
+  font-size: 2.625rem;
+  font-family: 'Dela Gothic One';
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: .6em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 small, .section-title small {
+  display: block;
+  font-size: 62%;
+  font-family: 'Inter';
+  font-weight: 400;
+  margin-top: .7em;
+  line-height: 1.3;
+  text-transform: none;
+}
+
+.white-title {
+  color: #fff;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.min {
+  display: block;
+}
+
+.col-mod-left {
+  padding-left: 0;
+}
+
+.col-mod-right {
+  padding-right: 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  ::i-block-chrome, .row {
+    display: block;
+  }
+  ::i-block-chrome, .row:after {
+    content: '';
+    display: table;
+    height: 0;
+    clear: both;
+  }
+}
+
+@media (min-resolution: 0.001dpcm) {
+  _:-o-prefocus .row, body .row {
+    display: block;
+  }
+  _:-o-prefocus .row:after, body .row:after {
+    content: '';
+    display: table;
+    height: 0;
+    clear: both;
+  }
+}
+
+[class^="col-"] {
+  float: left;
+}
+
+@media all and (min-width: 0\0) and (min-resolution: 0.001dpcm) {
+  .row:after {
+    content: '';
+    display: table;
+    height: 0;
+    clear: both;
+  }
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2"), url("../fonts/Inter-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dela Gothic One';
+  src: url("../fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ico-icon';
+  src: url("../fonts/ico-icon.ttf") format("truetype"), url("../fonts/ico-icon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ico-"], [class*=" ico-"] {
+  font-family: 'ico-icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0E1D2D;
+  z-index: 1000;
+}
+
+.logo-loader {
+  width: 240px;
+  height: 46px;
+  background: url(../fonts/logo.svg) no-repeat center top;
+  background-size: contain;
+  animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: .2;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: .2;
+    transform: scale(0.9);
+  }
+}
+
+.bg-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.54);
+  z-index: 90;
+}
+
+/*****HEADER*****/
+.ui-header {
+  padding: 1.5em 0;
+  position: relative;
+  z-index: 10;
+}
+
+.ui-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1900px;
+}
+
+.ui-header.is-overflow {
+  overflow-y: scroll;
+}
+
+.head-logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Dela Gothic One';
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.head-logo img {
+  margin-right: 2px;
+}
+
+.head-logo .text {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.head-nav_close-btn {
+  display: none;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+}
+
+.head-nav_close-btn:hover:after, .head-nav_close-btn:hover:before {
+  background: black;
+}
+
+.head-nav_close-btn:after, .head-nav_close-btn:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #fff;
+  transition: background .3s;
+}
+
+.head-nav_close-btn:after {
+  width: 100%;
+  height: 2px;
+}
+
+.head-nav_close-btn:before {
+  height: 100%;
+  width: 2px;
+}
+
+.head-nav {
+  flex: 1 0 0;
+  margin: 0 1em;
+  padding-left: 2em;
+}
+
+.head-menu {
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: -0.03em;
+  font-size: 1.125rem;
+  width: 100%;
+}
+
+.head-menu li {
+  padding: 0 .3em;
+}
+
+.head-menu a {
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: transparent;
+  transition: color .3s;
+}
+
+.head-menu a:hover {
+  color: #FFE664;
+}
+
+.head-menu a.active {
+  color: #FFE664;
+}
+
+.callback-btn {
+  display: inline-block;
+  min-width: 191px;
+  height: 46px;
+  line-height: 46px;
+  border-radius: 56px;
+  border: 1px solid #fff;
+  font-size: 1.125rem;
+  padding: 0 1em;
+  position: relative;
+  text-align: center;
+  transition: background-color .3s, color .3s;
+  white-space: nowrap;
+  top: -2px;
+  z-index: 1;
+}
+
+.callback-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.callback-btn:active {
+  box-shadow: inset 1px 2px #b3b3b3;
+  border-top: 1px solid #b3b3b3;
+}
+
+.fixed-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0E1D2D;
+  transform: translate3d(0, -100px, 0);
+  visibility: visible !important;
+  width: 100%;
+  z-index: 100;
+}
+
+.scroll-transform {
+  transform: translate3d(0, 0, 0) !important;
+  transition: transform .4s;
+}
+
+.hamburger {
+  display: none;
+  padding: 0;
+  cursor: pointer;
+  width: 30px;
+  flex: 30px 0 0;
+  height: 25px;
+}
+
+.hamburger.is-active .hamburger-inner {
+  background: #fff;
+}
+
+.hamburger.is-active .hamburger-inner:after, .hamburger.is-active .hamburger-inner:before {
+  background: #fff;
+}
+
+.hamburger-box {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hamburger-inner {
+  background: #fff;
+}
+
+.hamburger-inner:after, .hamburger-inner:before {
+  background: #fff;
+}
+
+.hamburger.is-active:hover, .hamburger:hover {
+  opacity: 1;
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+  width: 100%;
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+  height: 3px;
+}
+
+.hamburger--spring .hamburger-inner:before {
+  top: 10px;
+}
+
+.hamburger--spring .hamburger-inner:after {
+  top: 20px;
+}
+
+.site-map_section {
+  padding: 3em 0;
+}
+
+.site-map_menu li {
+  margin-bottom: 1em;
+}
+
+.main-content {
+  flex: 1 0  auto;
+}
+
+/***main-section**/
+.main-section {
+  font-size: 2rem;
+  padding: 3.3em 0 .2em;
+}
+
+.main-section .large-container {
+  max-width: 1560px;
+}
+
+.main-section .medium-container {
+  max-width: 1382px;
+  padding-top: 1em;
+}
+
+.main-section p {
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: .5em;
+}
+
+.main-section .bottom-text {
+  color: #6E7781;
+  letter-spacing: -0.03em;
+  margin-bottom: 4em;
+}
+
+.main-section .fire-icon {
+  width: 39px;
+  height: 39px;
+  display: inline-block;
+  background: url(../images/fire.png) no-repeat center top;
+  background-size: contain;
+  position: relative;
+  top: 5px;
+}
+
+.main-section .text-content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2em;
+  margin-bottom: 4.4em;
+}
+
+.main-section .thin-text {
+  font-weight: 300;
+}
+.head-logo {
+  font-size: 20px;
+}
+.head-menu {
+  font-size: .875rem;
+}
+
+
+.modal-content .top-text {
+  display: block;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.tablet-small_visible {
+  display: none;
+}
+.mobile-visible {
+  display: none;
+}
+.tablet-visible {
+  display: none;
+}
+@media only screen and (max-width: 1599px) {
+  .head-logo {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  h2, .section-title {
+    font-size: 1.7rem;
+  }
+}
