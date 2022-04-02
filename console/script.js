@@ -10,19 +10,33 @@
 const BLACKLISTED_KEY_CODES = [38];
 const COMMANDS = {
   help:
-    'Supported commands:<br> <span class="code">about</span>, <span class="code">experience</span>, <span class="code">education</span>, <span class="code">skills</span>, <span class="code">contact</span>, <span class="code">clear</span>',
+  'Supported commands:<br> <span class="code">about</span> - information about me <br> <span class="code">experience</span> - my pet-project and commercial experience <br> <span class="code">education</span> - my education <br> <span class="code">skills</span> - my skills/tools/os <br> <span class="code">contact</span> - my contact info <br> <span class="code">clr</span> - this command clean terminal <br> <span class="code">ifconfig</span> - puts domain name server <br> <span class="code">whois</span> - utilit puts info about domain name',
   about:
-    "Danila Kravchenko -- <span class=\"code\">CS student</span>",
+    
+  "Danila Kravchenko -- <span class=\"sys\">CS student</span>",
   skills:
-    '<span class="code">Languages:</span> C/C++/Rust, Ruby, Golang<br><span class="code">Technologies:</span> Git, SQL, Docker, Vim<br><span class="code">Frameworks:</span> Ruby on Rails<br><span class="code">OS:</span> CentOS, Ubuntu, Astra<br><span class="code">Disciplines:</span> Cybersecurity, System Engineering, Networks, Coding',
+    
+  '<span class="sys">Languages:</span> C/C++/Rust, Ruby, Golang<br><span class="sys">Technologies:</span> Git, SQL, Docker, Vim<br><span class="sys">Frameworks:</span> Ruby on Rails<br><span class="sys">OS:</span> CentOS, Ubuntu, Astra<br><span class="sys">Disciplines:</span> Cybersecurity, System Engineering, Networks, Coding',
   education:
-    ">Irkutsk Aviation Technical School <br>>Web-Development",
-  resume: "<a href='./resume.pdf' class='success link'>resume.pdf</a>",
-  experience: "6 months --> Irkutsk Aviation Technical Shcool --> SysAdmin.",
+  ">Irkutsk Aviation Technical School <br>>Web-Development",
+
+  resume: 
+  "<a href='./resume.pdf' class='success link'>resume.pdf</a>",
+
+  experience: 
+  "6 months --> Irkutsk Aviation Technical Shcool --> SysAdmin.",
+
   contact:
     "You can contact me on any of following links:<br><a href='https://www.t.me/kravchadev' class='success link'>Telegram</a>",
-  clear:
-    "<br> <br> <br> <br> <br> <br> <br> <br> <br> <br>"
+ 
+  clr:
+    "<br> <br> <br> <br> <br> <br> <br> <br> <br> <br>",
+
+  ifconfig:
+    '<span class="sys">domain:</span> devopskravcha.engineer',
+
+  whois:
+    '<span class="sys">domain:</span> devopskravcha.engineer <br><span class="sys">owner:</span> Danila Kravchenko <br><span class="sys">contact info:</span> owner@devopskravcha.engineer <br><span class="sys">buy date:</span> Feburary, 2022 <br><span class="sys">name server:</span> ns1.name.com'
 };
 let userInput, terminalOutput;
 
@@ -41,7 +55,7 @@ const execute = function executeCommand(input) {
   }
   output = `<div class="terminal-line"><span class="success">➜</span> <span class="directory">~</span> ${input}</div>`;
   if (!COMMANDS.hasOwnProperty(input)) {
-    output += `<div class="terminal-line">no such command: ${input}</div>`;
+    output += `<div class="terminal-line"><span class="error">system~</span> no such command: ${input}</div>`;
     console.log("Oops! no such command");
   } else {
     output += COMMANDS[input];
